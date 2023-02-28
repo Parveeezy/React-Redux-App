@@ -14,13 +14,13 @@ import {addUser, getUser} from "../../store/reducers/users/actions";
 
 const Users = () => {
 
-    const users = useSelector(state => state.users.users)
+    // const users = useSelector(state => state.users.users)
     const dispatch = useDispatch()
 
     const [user, setUser] = useState('')
 
     const onChangeHandler = (e) => {
-        e.currentTarget.value && setUser(e.currentTarget.value)
+       setUser(e.currentTarget.value)
     }
 
     const addUserHandler = (user) => {
@@ -40,6 +40,7 @@ const Users = () => {
                         type="text"
                         onChange={onChangeHandler}
                         value={user}
+                        placeholder={'Enter your name...'}
                     />
                     <CustomButton
                         variant='contained' onClick={() => addUserHandler(user)
@@ -48,22 +49,22 @@ const Users = () => {
                     </CustomButton>
                 </UsersInputBlock>
                 <UsersItems>
-                    {users ? (
-                        users.map((u, index) => {
-                            return (
-                                <UsersItem key={index}>
-                                    {index + 1}. {u.name}
-                                    <CustomButton variant='contained' onClick={() => getUserHandler(u.id)}>
-                                        Delete
-                                    </CustomButton>
-                                </UsersItem>
-                            )
-                        })
-                    ) : (
-                        <div>
-                            no users...
-                        </div>
-                    )}
+                    {/*{users ? (*/}
+                    {/*    users.map((u, index) => {*/}
+                    {/*        return (*/}
+                    {/*            <UsersItem key={index}>*/}
+                    {/*                {index + 1}. {u.name}*/}
+                    {/*                <CustomButton variant='contained' onClick={() => getUserHandler(u.id)}>*/}
+                    {/*                    Delete*/}
+                    {/*                </CustomButton>*/}
+                    {/*            </UsersItem>*/}
+                    {/*        )*/}
+                    {/*    })*/}
+                    {/*) : (*/}
+                    {/*    <div>*/}
+                    {/*        no users...*/}
+                    {/*    </div>*/}
+                    {/*)}*/}
                 </UsersItems>
             </UsersContainer>
         </UsersWrapper>

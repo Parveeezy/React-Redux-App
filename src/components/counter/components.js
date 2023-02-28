@@ -19,6 +19,7 @@ export const CounterBlock = styled('div')(() => ({
 export const CounterText = styled("p")(() => ({
     fontSize: 36,
     fontWeight: 600,
-    padding: '10px 0px',
+    padding: '30px 0px',
     margin: 0,
+    lineHeight: 0.8
 }));

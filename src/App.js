@@ -1,13 +1,14 @@
 import './App.css';
-import {NavLink} from "react-router-dom";
-import {AppRoutes} from "./routes/routes";
+import Header from './components/Header';
+import Main from './components/Main/Main';
 
 
 function App() {
 
     return (
-        <div className='App' >
-            <AppRoutes/>
+        <div className='App'>
+            <Header />
+            <Main />
         </div>
     );
 }

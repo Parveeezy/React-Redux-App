@@ -1,4 +1,4 @@
-import {styled} from "@mui/material";
+import { styled } from '@mui/material';
 
 export const UsersWrapper = styled('div')(() => ({
     margin: '15px auto',
@@ -9,29 +9,30 @@ export const UsersWrapper = styled('div')(() => ({
     backgroundColor: '#59677c',
     maxWidth: 360,
     color: '#ffffff',
-    borderRadius: 10
-}))
+    borderRadius: 10,
+}));
 export const UsersContainer = styled('div')(() => ({
-    padding: '15px 0'
-}))
+    padding: '15px 0',
+}));
 
 export const UsersInputBlock = styled('div')(() => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     margin: '15px 0',
-    textAlign: 'center'
-}))
+    textAlign: 'center',
+}));
 
 export const UserInput = styled('input')(() => ({
-    placeholder: 'enter'
-}))
+    padding: 5,
+    '::placeholder': { color: 'black' },
 
-export const UsersItems = styled('div')(() => ({
 
-}))
+}));
+
+export const UsersItems = styled('div')(() => ({}));
 
 export const UsersItem = styled('div')(() => ({
     fontWeight: 'bold',
-    marginTop: 10
-}))
+    marginTop: 10,
+}));

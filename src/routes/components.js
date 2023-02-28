@@ -1,15 +1,34 @@
-import {styled} from "@mui/material";
-import {NavLink} from "react-router-dom";
+import { styled } from '@mui/material';
+import { NavLink } from 'react-router-dom';
 
-export const AppLinks = styled(NavLink)(() => ({
+export const RoutesBlock = styled('div')(() => ({
+
+}))
+
+export const RoutesWrapper = styled('nav')(() => ({
+
+}))
+
+export const RoutesElements = styled('div')(() => ({
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    listStyleType: 'none',
+}))
+
+export const RoutesLinks = styled(NavLink)(() => ({
     textDecoration: 'none',
     color: 'white',
 
     '&&:hover': {
-        color: 'red'
+        color: 'red',
     },
 
     '&&:active': {
-        color: 'gold'
-    }
+        color: 'gold',
+    },
+}));
+
+export const RoutesLink = styled('nav')(() => ({
+    marginLeft: 10
 }))

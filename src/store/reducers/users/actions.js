@@ -1,15 +1,4 @@
-import {ADD_USER, GET_USER} from "../../constants";
+import { ADD_USER, GET_USER } from '../../constants';
 
-export const addUser = (user) => {
-    return {
-        type: ADD_USER,
-        payload: user
-    }
-}
-
-export const getUser = (id) => {
-    return {
-        type: GET_USER,
-        payload: id
-    }
-}
+export const addUser = (user) => ({ type: ADD_USER, payload: user });
+export const getUser = (id) => ({ type: GET_USER, payload: id });
