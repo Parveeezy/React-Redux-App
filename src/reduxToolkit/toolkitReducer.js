@@ -28,11 +28,6 @@ export const toolkitCounterReducer = createReducer(initialState, {
         state.count = state.count = 0;
     },
     [addUser]: (state, action) => {
-            return {...state, users: {...state.users,
-        {
-            id: v4(), name;
-        :
-            action.payload,
-        }}}
-    }
+        return {...state, users: [...state.users, {id: v4(), name: action.payload}]}
+    },
 });
