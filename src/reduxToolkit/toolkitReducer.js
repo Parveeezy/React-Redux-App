@@ -1,7 +1,6 @@
-import { createReducer } from '@reduxjs/toolkit';
 import { v4 } from 'uuid';
-import { createAction } from '@reduxjs/toolkit';
-import { ADD_COUNT, GET_COUNT, RESET_COUNT } from '../store/constants';
+import { createAction, createReducer } from '@reduxjs/toolkit';
+
 
 const initialState = {
     count: 0,
@@ -11,18 +10,29 @@ const initialState = {
     ],
 };
 
-export const increment = createAction({ ADD_COUNT });
-export const decrement = createAction({ GET_COUNT });
-export const reset = createAction({ RESET_COUNT });
+export const increment = createAction('INCREMENT');
+export const decrement = createAction('DECREMENT');
+export const reset = createAction('RESET');
+export const addUser = createAction('ADD_USER');
+export const getUser = createAction('GET_USER');
 
-export default createReducer(initialState, {
-    [increment]: (state, payload) => {
-        state.count = state.count + 1;
+export const toolkitCounterReducer = createReducer(initialState, {
+    [increment]: (state, action) => {
+        state.count = state.count + action.payload;
+        console.log(state);
     },
-    [decrement]: (state, payload) => {
-        state.count = state.count - 1;
+    [decrement]: (state, action) => {
+        state.count = state.count - action.payload;
     },
     [reset]: (state) => {
         state.count = state.count = 0;
     },
+    [addUser]: (state, action) => {
+            return {...state, users: {...state.users,
+        {
+            id: v4(), name;
+        :
+            action.payload,
+        }}}
+    }
 });

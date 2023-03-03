@@ -1,6 +1,5 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
-// import {addCounter, getCounter, resetCounter} from "../../store/reducers/counter/actions";
 
 import {CounterBlock, CounterText, CounterWrapper} from "./components";
 import {CustomButton} from "../../ui/index"
@@ -8,7 +7,7 @@ import { decrement, increment, reset } from '../../reduxToolkit/toolkitReducer';
 
 const Counter = () => {
     // const count = useSelector(state => state.counter.count);
-    const count = useSelector(state => state.toolkit.count);
+    const count = useSelector(state => state.toolkitCount.count);
     const dispatch = useDispatch();
 
     const addCountHandler = (n) => {
