@@ -1,49 +1,55 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
     UserInput,
     UsersContainer,
     UsersInputBlock,
     UsersItem,
     UsersItems,
-    UsersWrapper
-} from "./components";
+    UsersWrapper,
+} from './components';
 
-import {CustomButton} from "../../ui";
-import {useDispatch, useSelector} from "react-redux";
+import { CustomButton } from '../../ui';
+import { useDispatch, useSelector } from 'react-redux';
 import { addUser, getUser } from '../../reduxToolkit/toolkitReducer';
 
 
 const Users = () => {
 
-    const users = useSelector(state => state.toolkitCount.users)
-    const dispatch = useDispatch()
+    const users = useSelector(state => state.toolkitCount.users);
+    const dispatch = useDispatch();
 
-    console.log(users);
-
-    const [user, setUser] = useState('')
+    const [user, setUser] = useState('');
 
     const onChangeHandler = (e) => {
-       setUser(e.currentTarget.value)
-    }
+        setUser(e.currentTarget.value);
+    };
 
     const addUserHandler = (u) => {
-        user && dispatch(addUser(u))
-        setUser('')
-    }
+        user && dispatch(addUser(u));
+        setUser('');
+    };
+
+    const addUserEnterHandler = (e, u) => {
+        if (e.key === 'Enter' && user) {
+            dispatch(addUser(u));
+            setUser('');
+        }
+    };
 
     const getUserHandler = (id) => {
-        dispatch(getUser(id))
-    }
+        dispatch(getUser(id));
+    };
 
     return (
         <UsersWrapper>
             <UsersContainer>
                 <UsersInputBlock>
                     <UserInput
-                        type="text"
+                        type='text'
                         onChange={onChangeHandler}
                         value={user}
                         placeholder={'Enter your name...'}
+                        onKeyDown={(e) => addUserEnterHandler(e, user)}
                     />
                     <CustomButton
                         variant='contained' onClick={() => addUserHandler(user)
@@ -52,7 +58,7 @@ const Users = () => {
                     </CustomButton>
                 </UsersInputBlock>
                 <UsersItems>
-                    {users ? (
+                    {users.length ? (
                         users.map((u, index) => {
                             return (
                                 <UsersItem key={index}>
@@ -61,7 +67,7 @@ const Users = () => {
                                         Delete
                                     </CustomButton>
                                 </UsersItem>
-                            )
+                            );
                         })
                     ) : (
                         <div>

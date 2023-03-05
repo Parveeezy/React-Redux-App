@@ -30,4 +30,8 @@ export const toolkitCounterReducer = createReducer(initialState, {
     [addUser]: (state, action) => {
         return {...state, users: [...state.users, {id: v4(), name: action.payload}]}
     },
+    [getUser]: (state, action) => {
+        console.log(action);
+        return {...state, users: state.users.filter(u => u.id !== action.payload)}
+    },
 });
