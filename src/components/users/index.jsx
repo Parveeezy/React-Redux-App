@@ -10,12 +10,12 @@ import {
 
 import { CustomButton } from '../../ui';
 import { useDispatch, useSelector } from 'react-redux';
-import { addUser, getUser } from '../../reduxToolkit/toolkitReducer';
+import { addUser, fetchUsers, getUser } from '../../reduxToolkit/toolkitUsersReducer';
 
 
 const Users = () => {
 
-    const users = useSelector(state => state.toolkitCount.users);
+    const users = useSelector(state => state.toolkitUsers.users);
     const dispatch = useDispatch();
 
     const [user, setUser] = useState('');
@@ -55,6 +55,9 @@ const Users = () => {
                         variant='contained' onClick={() => addUserHandler(user)
                     }>
                         Add
+                    </CustomButton>
+                    <CustomButton variant='contained' onClick={() => dispatch(fetchUsers())}>
+                        Add many users
                     </CustomButton>
                 </UsersInputBlock>
                 <UsersItems>

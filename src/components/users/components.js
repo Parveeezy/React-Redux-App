@@ -7,7 +7,7 @@ export const UsersWrapper = styled('div')(() => ({
     alignItems: 'center',
     flexDirection: 'column',
     backgroundColor: '#59677c',
-    maxWidth: 360,
+    maxWidth: 560,
     color: '#ffffff',
     borderRadius: 10,
 }));
@@ -25,9 +25,9 @@ export const UsersInputBlock = styled('div')(() => ({
 
 export const UserInput = styled('input')(() => ({
     padding: 5,
+    border: 'none',
+    borderRadius: 5,
     '::placeholder': { color: 'black' },
-
-
 }));
 
 export const UsersItems = styled('div')(() => ({}));

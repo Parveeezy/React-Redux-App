@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 
 import {CounterBlock, CounterText, CounterWrapper} from "./components";
 import {CustomButton} from "../../ui/index"
-import { decrement, increment, reset } from '../../reduxToolkit/toolkitReducer';
+import { decrement, increment, reset } from '../../reduxToolkit/toolkitCountReducer';
 
 const Counter = () => {
     // const count = useSelector(state => state.counter.count);
